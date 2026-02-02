@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Rice",
+    "season": "Kharif",
+    "soil": ["Clay", "Loamy"],
+    "temp_min": 20,
+    "temp_max": 35,
+    "rainfall": "High"
+  },
+  {
+    "name": "Wheat",
+    "season": "Rabi",
+    "soil": ["Loamy", "Black"],
+    "temp_min": 10,
+    "temp_max": 25,
+    "rainfall": "Medium"
+  },
+  {
+    "name": "Groundnut",
+    "season": "Kharif",
+    
+    "soil": ["Red", "Sandy"],
+    "temp_min": 20,
+    "temp_max": 30,
+    "rainfall": "Low"
+  },
+  {
+    "name": "Cotton",
+    "season": "Kharif",
+    "soil": ["Black"],
+    "temp_min": 21,
+    "temp_max": 35,
+    "rainfall": "Medium"
+  },
+  {
+    "name": "Maize",
+    "season": "Kharif",
+    "soil": ["Loamy", "Red"],
+    "temp_min": 18,
+    "temp_max": 27,
+    "rainfall": "Medium"
+  }
+]

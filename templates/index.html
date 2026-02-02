@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgroSense AI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">🌱 AgroSense AI</h1>
+        <p class="subtitle">Smart Farming Intelligence Dashboard</p>
+
+        <div class="form-card">
+            <label>Season</label>
+            <select id="season">
+                <option value="Kharif">Kharif</option>
+                <option value="Rabi">Rabi</option>
+            </select>
+
+            <label>Soil Type</label>
+            <select id="soil">
+                <option value="Red">Red</option>
+                <option value="Black">Black</option>
+                <option value="Loamy">Loamy</option>
+                <option value="Sandy">Sandy</option>
+                <option value="Clay">Clay</option>
+            </select>
+
+            <label>Temperature (°C)</label>
+            <input type="number" id="temperature" placeholder="Enter temperature">
+
+            <button id="recommendBtn">Get Recommendations</button>
+        </div>
+
+        <div class="results">
+            <h2>🌾 Crop Recommendations</h2>
+            <div id="results"></div>
+        </div>
+
+        <div class="results">
+            <h2>🌍 Soil Insights</h2>
+            <p id="soilIssues"></p>
+            <p id="soilTips"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

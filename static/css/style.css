@@ -1,0 +1,133 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ===== FULL PAGE BACKGROUND (THIS IS THE FIX) ===== */
+body {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8f5e9 0%,
+      #c8e6c9 25%,
+      #81c784 50%,
+      #4caf50 75%,
+      #2e7d32 100%
+    );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== MAIN APP CARD ===== */
+.container {
+  background: linear-gradient(
+    180deg,
+    #1b5e20,
+    #2e7d32
+  );
+
+  border-radius: 22px;
+  padding: 32px;
+  width: 90%;
+  max-width: 900px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* ===== HEADER ===== */
+.title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #a5d6a7;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #e8f5e9;
+  margin-bottom: 20px;
+}
+
+/* ===== FORM CARD ===== */
+.form-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* ===== INPUTS ===== */
+label {
+  font-weight: 600;
+  margin-top: 12px;
+  display: block;
+  color: #1b5e20;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+}
+
+/* ===== BUTTON ===== */
+button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+
+  background: linear-gradient(
+    90deg,
+    #00e676,
+    #1de9b6
+  );
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== RESULTS ===== */
+.section-title {
+  margin-top: 24px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #c8e6c9;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #00f5a0,
+    #00d9f5
+  );
+  transition: width 1s ease-in-out;
+}

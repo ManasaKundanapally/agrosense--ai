@@ -1,0 +1,27 @@
+{
+  "Red": {
+    "issues": "Low nitrogen content and poor water retention",
+    "tips": "Add organic manure, compost, and green manure crops",
+    "best_crops": ["Groundnut", "Millets", "Maize"]
+  },
+  "Black": {
+    "issues": "Water logging and cracking during dry season",
+    "tips": "Ensure proper drainage and avoid over-irrigation",
+    "best_crops": ["Cotton", "Wheat"]
+  },
+  "Loamy": {
+    "issues": "Moderate nutrient loss over time",
+    "tips": "Maintain soil health with crop rotation and compost",
+    "best_crops": ["Rice", "Wheat", "Vegetables"]
+  },
+  "Sandy": {
+    "issues": "Low nutrient and water holding capacity",
+    "tips": "Add organic matter and irrigate frequently",
+    "best_crops": ["Groundnut", "Carrot"]
+  },
+  "Clay": {
+    "issues": "Poor drainage and hard texture",
+    "tips": "Improve aeration and add organic matter",
+    "best_crops": ["Rice", "Sugarcane"]
+  }
+}
