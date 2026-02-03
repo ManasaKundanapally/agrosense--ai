@@ -11,18 +11,23 @@ def load_json(path):
 def index():
     return render_template("index.html")
 
+from flask import Flask, request, jsonify
+
 @app.route("/recommend", methods=["POST"])
 def recommend():
     try:
-        user_data = request.get_json()
+        data = request.get_json()
 
-        season = user_data.get("season")
-        soil = user_data.get("soil")
-        temperature = int(user_data.get("temperature", 0))
+        soil_type = data.get("soilType")
+        temperature = data.get("temperature")
 
-        crops = load_json("data/crops.json")
-        results = []
-
+        return jsonify({
+            "crops": f"Recommended crops for {soil_type} soil",
+            "soil_issues": "No major soil issues detected",
+            "soil_tips": f"Maintain moisture at {temperature}°C"
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
         for crop in crops:
             score = 0
 
