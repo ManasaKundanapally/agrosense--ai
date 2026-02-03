@@ -1,72 +1,53 @@
-from flask import Flask, render_template, request, jsonify
-import json
+console.log("dashboard.js loaded");
 
-app = Flask(__name__)
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("recommendBtn");
 
-def load_json(path):
-    with open(path, "r") as f:
-        return json.load(f)
+  if (!button) {
+    console.error("Button not found");
+    return;
+  }
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+  button.addEventListener("click", async () => {
+    console.log("Button clicked");
 
-from flask import Flask, request, jsonify
+    const soilType = document.getElementById("soilType");
+    const temperature = document.getElementById("temperature");
 
-@app.route("/recommend", methods=["POST"])
-def recommend():
-    try:
-        data = request.get_json()
+    if (!soilType || !temperature) {
+      console.error("Input elements missing");
+      return;
+    }
 
-        soil_type = data.get("soilType")
-        temperature = data.get("temperature")
+    const data = {
+      soilType: soilType.value,
+      temperature: temperature.value
+    };
 
-        return jsonify({
-            "crops": f"Recommended crops for {soil_type} soil",
-            "soil_issues": "No major soil issues detected",
-            "soil_tips": f"Maintain moisture at {temperature}°C"
-        })
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-        for crop in crops:
-            score = 0
+    console.log("Sending data:", data);
 
-            if crop["season"] == season:
-                score += 30
+    try {
+      const res = await fetch("/recommend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
 
-            if soil in crop["soil"]:
-                score += 30
+      const result = await res.json();
 
-            if crop["temp_min"] <= temperature <= crop["temp_max"]:
-                score += 40
+      document.getElementById("results").innerText =
+        result.crops || "No crop data";
 
-            if score > 0:
-                results.append({
-                    "crop": crop["name"],
-                    "score": score
-                })
+      document.getElementById("soilIssues").innerText =
+        result.soilIssues || "";
 
-        results = sorted(results, key=lambda x: x["score"], reverse=True)
-        return jsonify(results[:3])
+      document.getElementById("soilTips").innerText =
+        result.soilTips || "";
 
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-
-@app.route("/soil-info", methods=["POST"])
-def soil_info():
-    data = request.get_json()
-    soil = data.get("soil")
-
-    soil_data = load_json("data/soil.json")
-
-    info = soil_data.get(soil, {
-        "issues": "No data available",
-        "tips": "No tips available"
-    })
-
-    return jsonify(info)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+    } catch (err) {
+      console.error("Fetch failed", err);
+    }
+  });
+});
