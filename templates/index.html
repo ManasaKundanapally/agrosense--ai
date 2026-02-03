@@ -1,61 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AgroSense AI</title>
-
-  <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/style.css') }}"
-  />
+    <meta charset="UTF-8">
+    <title>AgroSense AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
 <body>
-  <div class="container">
+
+<div class="card">
     <h1>🌱 AgroSense AI</h1>
 
-    <!-- Season -->
-    <label for="season">Season</label>
+    <label>Season</label>
     <select id="season">
-      <option value="">Select season</option>
-      <option value="Kharif">Kharif</option>
-      <option value="Rabi">Rabi</option>
+        <option value="">Select season</option>
+        <option value="Kharif">Kharif</option>
+        <option value="Rabi">Rabi</option>
     </select>
 
-    <!-- Soil Type -->
-    <label for="soilType">Soil Type</label>
+    <label>Soil Type</label>
     <select id="soilType">
-      <option value="">Select soil</option>
-      <option value="Red">Red</option>
-      <option value="Black">Black</option>
-      <option value="Clay">Clay</option>
+        <option value="">Select soil</option>
+        <option value="Red">Red</option>
+        <option value="Black">Black</option>
+        <option value="Clay">Clay</option>
     </select>
 
-    <!-- Temperature -->
-    <label for="temperature">Temperature (°C)</label>
-    <input
-      type="number"
-      id="temperature"
-      placeholder="Enter temperature"
-    />
+    <label>Temperature (°C)</label>
+    <input type="number" id="temperature" placeholder="Enter temperature">
 
-    <!-- Button -->
     <button id="recommendBtn">Get Recommendations</button>
 
-    <!-- Results -->
     <div class="results">
-      <h2>🌾 Crop Recommendations</h2>
-      <div id="results"></div>
-    </div>
+        <h2>🌾 Crop Recommendations</h2>
+        <div id="results"></div>
 
-    <div class="results">
-      <h2>🌍 Soil Insights</h2>
-      <p id="soilIssues"></p>
-      <p id="soilTips"></p>
+        <h2>🌍 Soil Insights</h2>
+        <p id="soilIssues"></p>
+        <p id="soilTips"></p>
     </div>
-  </div>
+</div>
 
-  <!-- JavaScript -->
-  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>
